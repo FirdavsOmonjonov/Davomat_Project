@@ -1,0 +1,79 @@
+{% extends 'dashboard/base.html' %}
+
+{% load static %}
+{% block content %}
+<!-- Content Wrapper START -->
+         <div class="main-content">
+            <div class="page-header no-gutters">
+                <div class="d-md-flex align-items-md-center justify-content-between">
+                    <div class="media m-v-10 align-items-center">
+                        <div class="avatar avatar-image avatar-lg">
+                            <img src="{% static 'dashboard/images/avatars/thumb-1.jpg' %}" alt="">
+                        </div>
+                        <div class="media-body m-l-15">
+                            <h4 class="m-b-0">Xush kelibsiz, {{user.username}}!</h4>
+                            <span class="text-gray"> Korxonadagi xodimlar davomatini hisobini yuritadigan dasturni admin saxifasiga</span>
+                        </div>
+                    </div>
+                    <div class="d-md-flex align-items-center d-none">
+                        <div class="media align-items-center m-r-40 m-v-5">
+                            <div class="font-size-27">
+                                <i class="text-success  anticon anticon-team"></i>
+                            </div>
+                            <div class="d-flex align-items-center m-l-10">
+                                <h2 class="m-b-0 m-r-5">{{ staff|length }}</h2>
+                                <span class="text-gray">Xodimlar soni</span>
+                            </div>
+                        </div>
+                        <!-- <div class="media align-items-center m-r-40 m-v-5">
+                            <div class="font-size-27">
+                                <i class="text-success  anticon anticon-appstore"></i>
+                            </div>
+                            <div class="d-flex align-items-center m-l-10">
+                                <h2 class="m-b-0 m-r-5">{{ staff|length }}</h2>
+                                <span class="text-gray">Maxsulotlar</span>
+                            </div>
+                        </div>
+                        <div class="media align-items-center m-v-5">
+                            <div class="font-size-27">
+                                <i class="text-danger anticon anticon-team"></i>
+                            </div>
+                            <div class="d-flex align-items-center m-l-10">
+                                <h2 class="m-b-0 m-r-5">{{ cart|length }}</h2>
+                                <span class="text-gray">Buyutrma berganlar</span>
+         
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Content Wrapper END -->
+        <!-- <script src="assets/vendors/chartjs/Chart.min.js"></script>
+        
+        <script src="assets/vendors/chartjs/Chart.min.js"></script>
+
+        <script src="{% static 'js/vendors.min.js' %}"></script> -->
+
+        <!-- page js -->
+        <!-- <script src="{% static 'vendors/chartjs/Chart.min.js' %}"></script>
+        <script src="{% static 'js/pages/dashboard-default.js' %}"></script> -->
+    
+        <!-- Core JS -->
+        <!-- <script src="{% static 'js/app.min.js' %}"></script>
+        <script src="{% static 'vendors/chartist/chartist.min.js' %}"></script> -->
+        <!-- <script>
+            new Chartist.Line('#simple-line-chart', {
+                labels: ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'Iyun', 'Iyul', 'Avg', 'Sent', 'Okt', 'Nov', 'Dek'],
+                series: [
+                    {{first}},
+                    {{second}}
+                ]
+                }, {
+                fullWidth: true,
+                chartPadding: {
+                    right: 40
+                }
+            });
+        </script> -->
+{% endblock %}

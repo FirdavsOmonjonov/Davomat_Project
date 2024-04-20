@@ -1,0 +1,97 @@
+{% extends 'dashboard/base.html' %}
+
+{% load static %}
+{% block content %}
+
+    <!-- Page Container START -->
+    <div class="page-container" style="padding-left: 50px; padding-right: 300px;">
+
+        <!-- Content Wrapper START -->
+        <div class="main-content">
+            <div class="page-header">
+                <h2 class="header-title">Xodimlar ro'yxati</h2>
+                <div class="header-sub-title">
+                    <nav class="breadcrumb breadcrumb-dash">
+                        <a href="#" class="breadcrumb-item"><i class="anticon anticon-menu m-r-5"></i>Menu</a>
+                        <a class="breadcrumb-item" href="#">Xodimlar</a>
+                        
+                        <span class="breadcrumb-item active">Ro'yxat</span>
+                    </nav>
+                </div>
+               
+                    <button  class="btn btn">
+                        <a href="{% url 'dashboard:staff_create' %}">
+                        <i class="anticon anticon-plus-circle m-r-5"></i>
+                        <span>Xodim qo'shish</span></a>
+                    </button>
+               
+                                            
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    
+                    <div class="table-responsive">
+                        <table class="table table-hover e-commerce-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="checkbox">
+                                            <input id="checkAll" type="checkbox">
+                                            <label for="checkAll" class="m-b-0"></label>
+                                        </div>
+                                    </th>
+                                    <th>ID</th>
+                                    <th>Ismi</th>
+                                    <th>Familiya</th>
+                                    <th>Lavozimi</th>
+                                    <th>Harakatlar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for q in queryset %}
+                                    <tr>
+                                        <td>
+                                            <div class="checkbox">
+                                                <input id="check-item-3" type="checkbox">
+                                                <label for="check-item-3" class="m-b-0"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                                <div>{{q.id}}</div>
+                                        </td>
+                                        <td> 
+                                                <div>{{q.first_name}}</div> 
+                                        </td>
+                                        <td>   
+                                                <div>{{q.last_name}}</div>
+                                        </td>
+                                        <td>
+                                                <div>{{q.staff_position}}</div>
+                                            
+                                        </td>
+                                        <td class="table-responsive">
+                                            <a href="{% url 'dashboard:staff_detail' q.id  %}" ><i class="anticon anticon-export"style="font-size:24px; margin-right: 15px;"></i></a>
+                                            <a href="{% url 'dashboard:staff_delete' q.id %}" class="anticon anticon-delete" style="font-size:24px; margin-right: 15px;"></a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Content Wrapper END -->
+
+        
+
+    </div>
+    <!-- Page Container END -->
+
+
+
+    
+{% endblock %}
+

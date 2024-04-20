@@ -1,0 +1,117 @@
+{% extends 'dashboard/base.html' %}
+
+{% load static %}
+{% block content %}
+
+        <!-- Page Container START -->
+        <div class="page-container" style="padding-left: 50px; padding-right: 300px;">
+
+            <!-- Content Wrapper START -->
+            <div class="main-content">
+                <div class="page-header">
+                    <h2 class="header-title">Xodim malumotlari</h2>
+                    <div class="header-sub-title">
+                        <nav class="breadcrumb breadcrumb-dash">
+                            <a href="#" class="breadcrumb-item"><i class="anticon anticon-menu m-r-5"></i>Menu</a>
+                            <a class="breadcrumb-item" href="#">Xodimlar</a>
+                            
+                            <span class="breadcrumb-item active">Batafsil</span>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        
+                        <div class="table-responsive">
+                            <table class="table table-hover e-commerce-table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <div class="checkbox">
+                                                <input id="checkAll" type="checkbox">
+                                                <label for="checkAll" class="m-b-0"></label>
+                                            </div>
+                                        </th>
+                                        <th>ID</th>
+                                        <th>Ismi</th>
+                                        <th>Familiya</th>
+                                        <th>Lavozimi</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Manzil</th>
+                                        <th>Jinsi</th>
+                                        <th>Harakatlar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-3" type="checkbox">
+                                                    <label for="check-item-3" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                
+                                                    <div>{{queryset.id}}</div>
+                                                
+                                            </td>
+                                            
+                                            <td>
+                                                
+                                                    <div>{{queryset.first_name}}</div>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                                    <div>{{queryset.last_name}}</div>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                                    <div>{{queryset.staff_position}}</div>
+                                                
+                                            </td>
+                                            <td>
+                                                <div>{{queryset.email}}</div>
+                                            </td>
+                                            <td>
+                                                <div>{{queryset.phone}}</div>
+                                            </td>
+                                            <td>
+                                                
+                                                    <div>{{queryset.address}}</div>
+                                            </td>
+                                            <td>
+                                                <div>{{queryset.gender}}</div>
+                                            </td>
+                                            <td class="table-responsive">
+                                                <a href="{% url 'dashboard:staff_update' queryset.id  %}" ><i class="anticon anticon-edit"style="font-size:24px; margin-right: 15px;"></i></a>
+                                                <a href="{% url 'dashboard:staff_delete' queryset.id %}" class="anticon anticon-delete" style="font-size:24px; margin-right: 15px;"></a>
+                                        
+                                            </td>
+                                        </tr>
+                                        
+                                   
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Content Wrapper END -->
+
+            
+
+        </div>
+        <!-- Page Container END -->
+
+        
+    
+
+    
+    {% endblock %}
+
+</html>
