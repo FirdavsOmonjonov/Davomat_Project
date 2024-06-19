@@ -26,3 +26,4 @@ class Attendance(models.Model):
     
     def __str__(self):
         return self.staff.first_name + ' ' + self.staff.last_name
+

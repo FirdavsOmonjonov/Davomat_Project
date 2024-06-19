@@ -16,8 +16,8 @@ class StaffDetailSerializer(ModelSerializer):
         model = models.Staff
         fields = '__all__'
 
-class AttendanceCreateSerializer(ModelSerializer):
-    """Serializer for attendance create"""
+class AttendanceSerializer(ModelSerializer):
+    """davomat"""
     class Meta:
         model = models.Attendance
-        fields = ['id','date_came']
+        fields = ['staff']
